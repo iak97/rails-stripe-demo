@@ -1,0 +1,12 @@
+<div class="content">
+    <h1>Welcome to rails stripe demo site!</h1>
+    <% if user_signed_in? %>
+        <%= link_to "Log Out", destroy_user_session_path, class: 'button', data: {
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure?"
+        } %>
+    <% else %>
+        <%= link_to 'Log In', new_user_session_path, class: 'button' %>
+        <%= link_to 'Register', new_user_registration_path, class: 'button' %>
+    <% end %>
+</div>
